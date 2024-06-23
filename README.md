@@ -159,7 +159,7 @@ export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 - modal: HTMLElement - элемент модального окна
 - events: IEvents - брокер событий
 - btn: HTMLButtonElement - кнопка подтверждения
-- _form: HTMLFormElement - элемент формы
+- form: HTMLFormElement - элемент формы
 - formName: string - значение атрибута name формы
 - inputs: NodeListOf<HTMLInputElement> - коллекции всех полей ввода формы
 - errors: Record<string, HTMLElement> - объект хранящий все элементы для вывода ошибок под полями формы с привязкой к атрибуту name инпутов
@@ -176,7 +176,7 @@ export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 
 Поля класса наследются из класса Modal:
 - submitButton: HTMLButtonElement - кнопка подтверждения
-- _form: HTMLFormElement - элемент формы
+- form: HTMLFormElement - элемент формы
 - formName: string - значение атрибута name формы
 
 Поля класс:
@@ -197,7 +197,7 @@ export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 
 Поля класса наследются из класса Modal:
 - submitButton: HTMLButtonElement
-- _form: HTMLFormElement 
+- form: HTMLFormElement 
 - formName: string 
 - inputs: NodeListOf<HTMLInputElement> 
 - errors: Record<string, HTMLElement> 
@@ -213,7 +213,7 @@ export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 
 Поля класса наследются из класса Modal:
 - submitButton: HTMLButtonElement
-- _form: HTMLFormElement
+- form: HTMLFormElement
 - formName: string 
 - inputs: NodeListOf<HTMLInputElement> 
 - errors: Record<string, HTMLElement>
@@ -240,15 +240,15 @@ export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 - `products:changed` - изменение массива карточек товаров.
 - `product:selected` - при клике на товар всплывает модальное окно с подробной информацией о товаре и возможностью добавления товара в корзину.
 - `payment:change` - выбор способа оплаты.
+- `payment:complete` - оформление заказа при выборе способа оплаты.
 - `address:input` - ввод адреса доставки заказа.
 - `mail:input` - ввод почтового ящика покупателя.
 - `phone:input` - ввод телефона покупателя.
 - `order:complete` - при открытии окна успешной оплаты.
-- `info:submit` - подтверждение контактных данных.
-- `order:submit` - подтверждение данных для оплаты и доставки.
+- `info:complete` - подтверждение контактных данных.
 - `cart:open`- открытие модального окна с содержимым корзины.
-- `cart:toggleItem` - при клике в модальном окне товара на кнопку "добавить в корзину" происходит добавление товара.
-- `cart:deleteItem` - при клике на кнопку удаления товара в корзине.
-- `cart:order` - оформление заказа из корзины.
-- `order:validation` - событие, сообщающее о необходимости валидации формы с вводом адреса и способа оплаты.
+- `cart:addProduct` - при клике в модальном окне товара на кнопку "добавить в корзину" происходит добавление товара.
+- `cart:deleteProduct` - при клике на кнопку удаления товара в корзине.
+- `cart:complete` - оформление заказа из корзины.
+- `payment:validation` - событие, сообщающее о необходимости валидации формы с вводом адреса и способа оплаты.
 - `info:validation` - событие, сообщающее о необходимости валидации формы с контактными данными. 
