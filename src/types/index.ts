@@ -32,3 +32,9 @@ export type TFormPayment = Pick<IForm, 'paymentMethod' | 'deliveryAddress'>
 export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
 
 // export type TFormSuccess = Pick<IForm, > ???
+
+export interface IApi {
+    baseUrl: string;
+    get(uri: string): void;
+    post(uri: string, data: object): void;
+}
