@@ -8,17 +8,12 @@ export class ProductData extends View<IProductData> {
   protected counter: HTMLElement;
   protected products: HTMLElement;
 
-  constructor(element: HTMLElement, events: IEvents) {
-    super(element, events);
+  constructor(element: HTMLElement) {
+    super(element);
     this.products = ensureElement<HTMLElement>(".gallery");
-    
   }
 
   set setProducts(items: HTMLElement[]) {
     this.products.replaceChildren(...items);
-  }
-
-  getProduct(_id: string) {
-    return _id;
   }
 }

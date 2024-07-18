@@ -1,11 +1,12 @@
 //интерфейс карточки товара
 export interface IProduct {
-    _id: string,
+    id: string,
     description: string,
     image: string,
     title: string,
     category: string,
-    price: number
+    price: number,
+    count: number
 }
 
 //интерфейс с данными покупателя 
@@ -23,18 +24,24 @@ export interface IProductData {
     getProduct(productId: string): IProduct
 }
 
-export type TProductInfo = Pick<IProduct, 'title' | 'description' | 'category' | 'price' | 'image'>
-
-export type TProductCart = Pick<IProduct, 'title' | 'category' | 'price'>
-
-export type TFormPayment = Pick<IForm, 'paymentMethod' | 'deliveryAddress'>
-
-export type TFormInfo = Pick<IForm, 'mail' | 'phone'>
-
-// export type TFormSuccess = Pick<IForm, > ???
-
 export interface IApi {
     baseUrl: string;
     get(uri: string): void;
     post(uri: string, data: object): void;
 }
+
+export interface IOrder {
+	payment: string;
+	email: string;
+	phone: string;
+	address: string;
+	items: string[];
+	total: number;
+}
+
+export interface IOrderResult {
+	id: string;
+}
+
+export type FormErrors = Partial<Record<keyof IOrder, string>>;
+export type TOrder = Pick<IOrder, 'payment' | 'address' | 'email' | 'phone'>;
