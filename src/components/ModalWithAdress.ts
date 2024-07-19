@@ -1,9 +1,9 @@
 import { IOrder } from '../types';
 import { IEvents } from './base/events';
-import { ModalForm } from './ModalForm';
+import { Form } from './Form';
 
 
-export class ModalWithAdress extends ModalForm<IOrder> {
+export class ModalWithAdress extends Form<IOrder> {
 	protected cash: HTMLButtonElement;
 	protected card: HTMLButtonElement;
 	protected _address: HTMLInputElement;

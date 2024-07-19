@@ -1,8 +1,8 @@
 import { IEvents } from './base/events';
 import { IOrder } from '../types';
-import { ModalForm } from './ModalForm';
+import { Form } from './Form';
 
-export class ModalWithInfo extends ModalForm<IOrder> {
+export class ModalWithInfo extends Form<IOrder> {
 	protected _email: HTMLInputElement;
 	protected _phone: HTMLInputElement;
 

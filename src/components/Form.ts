@@ -7,7 +7,7 @@ interface IFormState {
 	errors: string[];
 }
 
-export class ModalForm<IOrder> extends View<IFormState> {
+export class Form<IOrder> extends View<IFormState> {
 	protected submitBtn: HTMLButtonElement;
 	protected formName: string;
 	protected _errors: HTMLElement;
