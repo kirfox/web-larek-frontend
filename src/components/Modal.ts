@@ -39,18 +39,17 @@ export class Modal<IModal> extends View<IModal> {
 
 	open() {
 		this.toggleModal();
-		this.toggleClass(this.wrapper, 'page__wrapper_locked', true)
 	}
 
 	close() {
 		this.toggleModal(false);
 		this.content = null;
-        this.toggleClass(this.wrapper, 'page__wrapper_locked', false)
 		this.events.emit('modal:close');
 	}
 
     toggleModal(state: boolean = true) {
 		this.toggleClass(this.element, 'modal_active', state);
+		this.toggleClass(this.wrapper, 'page__wrapper_locked', state)
 	}
 
 	render(data: IModal): HTMLElement {
